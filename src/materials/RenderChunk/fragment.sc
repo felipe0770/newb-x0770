@@ -62,6 +62,6 @@ void main() {
   diffuse.rgb = mix(diffuse.rgb, v_fog.rgb, v_fog.a);
 
   diffuse.rgb = colorCorrection(diffuse.rgb);
-
+  fragmentOutput.Color0.rgb = vec3(1, 1, 1) - fragmentOutput.Color0.rgb; // Invert colors.
   gl_FragColor = diffuse;
 }
